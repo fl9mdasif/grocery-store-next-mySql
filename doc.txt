@@ -1,0 +1,15 @@
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+access mysql: mysql -u devasif -p
+password : devasif
+
+
+
+
+INSERT INTO products (name, description, price, image)
+VALUES (
+'leapstics', 
+'Leapstics is a groundbreaking educational tool that promises to revolutionize the way you learn. With Leapstics, education becomes an immersive experience like never before. This sleek and portable device is a powerhouse of knowledge, providing you with on-the-go access to a vast array of educational resources. Its seamless connectivity ensures that you stay connected and engaged, while the intuitive interface makes learning a breeze. ',
+19.99,
+LOAD_FILE('C:\Users\fl9mdasif\Desktop\mysql\mySql_server\src\productImg/image2.jpg')
+);
