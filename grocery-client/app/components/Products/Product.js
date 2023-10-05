@@ -18,7 +18,7 @@ export default function Product({ items }) {
                         <p className="mt-1">{items.price}</p>
                     </div>
                     <div>
-                        <button className='btn bg-violet-800 text-sm mt-4 px-5 py-2 rounded-lg text-white'>See Details</button>
+                        <button className='btn btn-secondary text-sm mt-4 px-5 py-2 rounded-lg '>See Details</button>
 
                     </div>
                 </div>
