@@ -1,2 +1,5 @@
 mySqlserver/node_module
 mySqlserver/.env
+
+grocery-client/node_module
+grocery-client/.env
