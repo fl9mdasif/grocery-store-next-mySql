@@ -4,9 +4,19 @@ import React, { useState } from 'react'
 
 export default function SingleProduct({ items }) {
 
-    // const [name] = items
-    // const router = useRouter();
-    // const { productId } = router.query;
+
+    function addToCart(product) {
+        // Get the current cart data from localStorage or initialize an empty array
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    const handleAddToCart = () => {
+        addToCart(items);
+        alert('Product added to cart!');
+    }
 
     return (
 
@@ -31,13 +41,18 @@ export default function SingleProduct({ items }) {
 
                     {/* modal plate */}
                     <dialog id={items.id} className="modal modal-bottom sm:modal-middle">
-                        <div className="modal-box max-w-3xl">
+                        {/* <input type="checkbox" id={items.id} className="modal-toggle" /> */}
+                        <div className="modal-box w-14/15 max-w-6xl">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            </form>
 
                             {/* modal template  */}
                             <section className="text-gray-600 body-font overflow-hidden">
                                 <div className=" px-5 py-4 mx-auto">
                                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                                        <img alt="ecommerce1" className="lg:w-1/2 w-full lg:h-72 sm:h-32 object-cover object-center rounded" src={items.image} />
+                                        <img alt="ecommerce1" className="lg:w-1/2 w-full   object-cover object-center rounded" src={items.image} />
 
                                         <div className="">
                                             <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
@@ -63,6 +78,8 @@ export default function SingleProduct({ items }) {
                                                         </svg>
                                                     </a>
                                                 </span>
+
+
                                             </div>
                                             <p className="leading-relaxed">{items.description}</p>
                                             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
@@ -72,7 +89,9 @@ export default function SingleProduct({ items }) {
                                             <div className="flex flex-col">
                                                 <span className="title-font font-medium text-2xl text-gray-900">${items.price}</span>
 
-                                                <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                                                <button onClick={handleAddToCart}
+
+                                                    className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">AddToCart</button>
 
                                                 <button className="rounded-full w-5 h-5 bg-gray-200 p-0 border-0  items-center justify-center text-gray-500 ml-4">
                                                     <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
@@ -86,23 +105,11 @@ export default function SingleProduct({ items }) {
                             </section>
 
 
-
-
-                            <div className="modal-action">
-                                <form method="dialog">
-                                    {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn">Close</button>
-                                </form>
-                            </div>
-
-
-
                         </div>
                     </dialog>
 
                 </div>
-            </div>
-        </div>
-
+            </div >
+        </div >
     )
 }
