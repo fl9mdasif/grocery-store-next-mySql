@@ -1,4 +1,6 @@
-import Product from "./Product"
+import Link from "next/link"
+import SingleProduct from "./singleProduct"
+
 
 const Products = async () => {
 
@@ -11,7 +13,13 @@ const Products = async () => {
                 {
                     data.map((items, index) =>
                         // <p>{items.name} </p>
-                        <Product items={items} key={index} />
+
+                        // <Link className="w-auto" href={`/productdetails/${items.id}`} key={items.id}>
+                        // </Link>
+                        <SingleProduct
+                            items={items}
+                            id={items.id}
+                            key={index} />
                     )
 
                 }
