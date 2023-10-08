@@ -1,5 +1,6 @@
-import Link from "next/link"
+
 import SingleProduct from "./singleProduct"
+
 
 
 const Products = async () => {
@@ -12,10 +13,7 @@ const Products = async () => {
             <div className="flex justify-center items-center flex-wrap m-4">
                 {
                     data.map((items, index) =>
-                        // <p>{items.name} </p>
 
-                        // <Link className="w-auto" href={`/productdetails/${items.id}`} key={items.id}>
-                        // </Link>
                         <SingleProduct
                             items={items}
                             id={items.id}
