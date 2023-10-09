@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 const Navbar = () => {
     const { user, googleSignIn, logOut } = UserAuth();
     const [loading, setLoading] = useState(true);
+    // console.log(user);
 
     const handleSignIn = async () => {
         try {
