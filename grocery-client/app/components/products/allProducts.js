@@ -1,4 +1,5 @@
 
+import GroceryProductSearch from "./SearchProduct"
 import SingleProduct from "./singleProduct"
 
 const Products = async () => {
@@ -10,6 +11,7 @@ const Products = async () => {
     return (
         <div className="container  px-5 py-24 mx-auto">
 
+            <GroceryProductSearch />
             <div className="flex justify-center items-center flex-wrap m-4">
 
                 {
@@ -23,10 +25,6 @@ const Products = async () => {
 
                     )
                 }
-
-
-
-
             </div>
         </div>
     )
