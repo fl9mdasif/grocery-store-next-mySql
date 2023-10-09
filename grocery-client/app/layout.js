@@ -1,4 +1,6 @@
+'use-client'
 import Navbar from './components/shared/Navbar'
+import { AuthContextProvider } from './context/AuthContext'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -13,8 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="mytheme">
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <AuthContextProvider>
+
+          <Navbar />
+          {children}
+        </AuthContextProvider>
       </body>
     </html>
   )
