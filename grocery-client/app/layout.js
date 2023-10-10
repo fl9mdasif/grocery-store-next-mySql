@@ -1,6 +1,7 @@
 
 import Navbar from './components/shared/Navbar'
 import { AuthContextProvider } from './context/AuthContext'
+import { QueryProvider } from './context/QueryProvider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -17,14 +18,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
   return (
-    <html lang="en" data-theme="mytheme">
-      <body className={inter.className}>
+    <QueryProvider>
+      <html lang="en" data-theme="mytheme">
+        <body className={inter.className}>
 
-        <AuthContextProvider>
-          <Navbar />
-          {children}
-        </AuthContextProvider>
-      </body>
-    </html>
+          <AuthContextProvider>
+            <Navbar />
+            {children}
+          </AuthContextProvider>
+        </body>
+      </html>
+    </QueryProvider>
+
   )
 }

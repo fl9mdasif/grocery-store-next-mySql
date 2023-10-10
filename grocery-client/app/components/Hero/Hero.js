@@ -10,7 +10,7 @@ const Hero = () => {
 
         < div div className="h-scren w-screen " >
             <Image className="object-fill sliderImg " src={hero3} alt="empty" />
-            <div className="absolute bottom-10 flex justify-center items-center  ">
+            <div className="absolute1 bottom-10 flex justify-center items-center  ">
 
                 <div className=" ">
                     <Link href='/'

@@ -2,6 +2,7 @@
 import { UserAuth } from "@/app/context/AuthContext";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Spinner from "./Snipper";
 
 const Navbar = () => {
     const { user, googleSignIn, logOut } = UserAuth();
@@ -37,10 +38,9 @@ const Navbar = () => {
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <Link href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
 
-                    <span className="ml-3 text-xl">SadaMart</span>
+                    <span className="ml-3 text-xl">AgroMart</span>
                 </Link>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link href="/components/about" className="mr-5 hover:bg-gray-100">About</Link>
                     <Link href="/components/contact" className="mr-5 hover:bg-gray-100">Contact</Link>
 
 
@@ -51,7 +51,7 @@ const Navbar = () => {
 
                     )}
 
-                    {loading ? null : !user ? (
+                    {loading ? <Spinner /> : !user ? (
                         <ul className="flex ">
                             <li onClick={handleSignIn} className="p-2 hover:bg-gray-200 cursor-pointer">
                                 Login
