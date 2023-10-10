@@ -1,11 +1,11 @@
 // 'use client'
 import React from 'react'
-import Products from './components/products/allProducts'
+import Homepage from './components/home/Homepage'
 
 export default function Home() {
   return (
     <div>
-      <Products />
+      <Homepage />
     </div>
   )
 }

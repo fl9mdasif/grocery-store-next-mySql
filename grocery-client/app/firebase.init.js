@@ -6,14 +6,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDp3EKaKklB9n4Chl9vp05h5sbNIo-M5uY",
-    authDomain: "grocery-ba652.firebaseapp.com",
-    projectId: "grocery-ba652",
-    storageBucket: "grocery-ba652.appspot.com",
-    messagingSenderId: "153846410972",
-    appId: "1:153846410972:web:777047512a37dbfef50e19"
+    apiKey: "AIzaSyCrosuaB_V8Jgcz_4HheuK2pZRjCx8oxxs",
+    authDomain: "grocery-auth-5bff9.firebaseapp.com",
+    projectId: "grocery-auth-5bff9",
+    storageBucket: "grocery-auth-5bff9.appspot.com",
+    messagingSenderId: "529847101509",
+    appId: "1:529847101509:web:6c984f61eaa019171b9b2c"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);;
 export const auth = getAuth(app);
